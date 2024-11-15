@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.example.appseguranadainformacao.home.HomeFragment"
+        android:label="@string/home_fragment_label"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_GoodPracticesFragment"
+            app:destination="@id/GoodPracticesFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_QuizFragment"
+            app:destination="@id/QuizFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SecurityNewsFragment"
+            app:destination="@id/securityNewsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/GoodPracticesFragment"
+        android:name="com.example.appseguranadainformacao.home.GoodPracticesFragment"
+        android:label="@string/good_practices_fragment_label"
+        tools:layout="@layout/fragment_good_practices">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/QuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/QuizFragment"
+        android:name="com.example.appseguranadainformacao.home.QuizFragment"
+        android:label="@string/quiz_fragment_label"
+        tools:layout="@layout/fragment_quiz">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/GoodPracticesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/securityNewsFragment"
+        android:name="com.example.appseguranadainformacao.news.SecurityNewsFragment"
+        android:label="Notícias e Atualizações sobre Segurança"
+        tools:layout="@layout/fragment_security_news" />
+
+    <action
+        android:id="@+id/action_SecurityNewsFragment_to_HomeFragment"
+        app:destination="@id/HomeFragment" />
+
+</navigation>
